@@ -17,6 +17,11 @@ class CallReceiver : PhonecallReceiver() {
 
     override fun onIncomingCallStarted(ctx: Context, number: String?, start: Date) {
        Log.e("TAG", "INCOMMIG")
+
+        val intent = Intent(ctx, PhoneCustomDialog::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        ctx.startActivity(intent)
     }
 
     override fun onMissedCall(ctx: Context, number: String?, start: Date?) {
